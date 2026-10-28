@@ -68,16 +68,24 @@
 
 ## GitHub Stats
 
-<!-- overview.svg and languages.svg include private repos and are regenerated daily by .github/workflows/profile-images.yml -->
-<p align="center">
-  <img src="https://raw.githubusercontent.com/jhigginsGH/jhigginsGH/output/overview.svg" alt="GitHub stats, including lines of code changed" height="180" />
-  <img src="https://raw.githubusercontent.com/jhigginsGH/jhigginsGH/output/languages.svg" alt="Most used languages" height="180" />
-</p>
-
 <p align="center">
   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=jhigginsGH&custom_title=jhigginsGH%27s%20GitHub%20Stats&show_icons=true&count_private=true&hide=stars&hide_rank=true&hide_border=true&icon_color=F97316&title_color=F97316&theme=github_dark" />
+    <img src="https://github-readme-stats.vercel.app/api?username=jhigginsGH&custom_title=jhigginsGH%27s%20GitHub%20Stats&show_icons=true&count_private=true&hide=stars&hide_rank=true&hide_border=true&icon_color=F97316&title_color=F97316&theme=default" alt="GitHub stats" height="170" />
+  </picture>
+  <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com/?user=jhigginsGH&theme=github-dark-blue&hide_border=true&ring=F97316&fire=F97316&currStreakLabel=F97316" />
-    <img src="https://streak-stats.demolab.com/?user=jhigginsGH&theme=default&hide_border=true&ring=F97316&fire=F97316&currStreakLabel=F97316" alt="GitHub streak" />
+    <img src="https://streak-stats.demolab.com/?user=jhigginsGH&theme=default&hide_border=true&ring=F97316&fire=F97316&currStreakLabel=F97316" alt="GitHub streak" height="170" />
+  </picture>
+</p>
+
+## Contributions in 3D
+
+<!-- Generated daily by .github/workflows/profile-images.yml -->
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/jhigginsGH/jhigginsGH/output/profile-night-rainbow.svg" />
+    <img src="https://raw.githubusercontent.com/jhigginsGH/jhigginsGH/output/profile-green-animate.svg" alt="3D contribution graph" />
   </picture>
 </p>
 
@@ -90,4 +98,10 @@
   </picture>
 </p>
 
-<p align="center"><sub>Stats and lines of code by <a href="https://github.com/jstrieb/github-stats">jstrieb/github-stats</a> · snake by <a href="https://github.com/Platane/snk">Platane/snk</a> · streak by <a href="https://github.com/DenverCoder1/github-readme-streak-stats">DenverCoder1</a></sub></p>
+## Joke of the Day
+
+<p align="center">
+  <img src="https://readme-jokes.vercel.app/api?theme=github_dark&borderColor=F97316&qColor=F97316&aColor=58A6FF&hideBorder" alt="Random programming joke" />
+</p>
+
+<p align="center"><sub>Stats by <a href="https://github.com/anuraghazra/github-readme-stats">github-readme-stats</a> · streak by <a href="https://github.com/DenverCoder1/github-readme-streak-stats">DenverCoder1</a> · 3D graph by <a href="https://github.com/yoshi389111/github-profile-3d-contrib">yoshi389111</a> · snake by <a href="https://github.com/Platane/snk">Platane/snk</a> · jokes by <a href="https://github.com/ABSphreak/readme-jokes">readme-jokes</a></sub></p>
