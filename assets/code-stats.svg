@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="495" height="255" viewBox="0 0 495 255" role="img" aria-label="59,513 lines of code written across 29 repos">
+<style>
+  .bg { fill: #ffffff; }
+  .title { font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif; fill: #F97316; }
+  .big { font: 700 26px 'Segoe UI', Ubuntu, Sans-Serif; fill: #24292f; }
+  .sub { font: 400 13px 'Segoe UI', Ubuntu, Sans-Serif; fill: #57606a; }
+  .lang { font: 400 12px 'Segoe UI', Ubuntu, Sans-Serif; fill: #24292f; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #0d1117; }
+    .big, .lang { fill: #c9d1d9; }
+    .sub { fill: #8b949e; }
+  }
+</style>
+<rect class="bg" x="0.5" y="0.5" rx="4.5" width="494" height="254"/>
+<text x="25" y="35" class="title">Code I've written</text>
+<text x="25" y="72" class="big">59,513 lines<tspan class="sub" dx="12">across 29 repos, public and private</tspan></text>
+<mask id="bar"><rect x="25" y="95" width="445" height="8" rx="4" fill="white"/></mask>
+<g mask="url(#bar)"><rect x="25.00" y="95" width="134.19" height="8" fill="#b07219"/><rect x="159.19" y="95" width="80.65" height="8" fill="#3178c6"/><rect x="239.84" y="95" width="72.29" height="8" fill="#3572A5"/><rect x="312.13" y="95" width="39.70" height="8" fill="#F05138"/><rect x="351.84" y="95" width="36.36" height="8" fill="#e34c26"/><rect x="388.20" y="95" width="33.67" height="8" fill="#663399"/><rect x="421.87" y="95" width="30.88" height="8" fill="#f1e05a"/><rect x="452.75" y="95" width="7.84" height="8" fill="#00B4AB"/><rect x="460.59" y="95" width="9.41" height="8" fill="#8b949e"/></g>
+<circle cx="30" cy="126" r="5" fill="#b07219"/><text x="41" y="130" class="lang">Java 30.2%</text><circle cx="255" cy="126" r="5" fill="#3178c6"/><text x="266" y="130" class="lang">TypeScript 18.1%</text><circle cx="30" cy="151" r="5" fill="#3572A5"/><text x="41" y="155" class="lang">Python 16.2%</text><circle cx="255" cy="151" r="5" fill="#F05138"/><text x="266" y="155" class="lang">Swift 8.9%</text><circle cx="30" cy="176" r="5" fill="#e34c26"/><text x="41" y="180" class="lang">HTML 8.2%</text><circle cx="255" cy="176" r="5" fill="#663399"/><text x="266" y="180" class="lang">CSS 7.6%</text><circle cx="30" cy="201" r="5" fill="#f1e05a"/><text x="41" y="205" class="lang">JavaScript 6.9%</text><circle cx="255" cy="201" r="5" fill="#00B4AB"/><text x="266" y="205" class="lang">Dart 1.8%</text><circle cx="30" cy="226" r="5" fill="#8b949e"/><text x="41" y="230" class="lang">Other 2.1%</text>
+</svg>

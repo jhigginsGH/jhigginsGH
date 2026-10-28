@@ -79,6 +79,11 @@
   </picture>
 </p>
 
+<!-- Snapshot across all repos (public + private). Refresh with: python3 scripts/code_stats.py -->
+<p align="center">
+  <img src="assets/code-stats.svg" alt="Lines of code written and languages used across all repos" />
+</p>
+
 ## Contributions in 3D
 
 <!-- Generated daily by .github/workflows/profile-images.yml -->
