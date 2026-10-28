@@ -1,0 +1,89 @@
+name: Generate profile images
+
+# Regenerates the snake animation and the stats / lines-of-code cards, then
+# force-pushes them as a single commit to the `output` branch, which the
+# README reads images from. Keeping them off `main` keeps its history clean.
+
+on:
+  schedule:
+    - cron: "17 6 * * *" # daily, 06:17 UTC
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: profile-images
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write # push to the output branch
+    env:
+      GITHUB_STATS_VERSION: "2.0.1"
+      GITHUB_STATS_SHA256: "5e15e02803559cec5b5bdae4f202939846789c4cd3a34cfd24ee9ff13d6902c5"
+    steps:
+      - uses: actions/checkout@v7
+
+      # Start from the last published images, so a step that fails (or is
+      # skipped because the token isn't set yet) keeps yesterday's image.
+      - name: Restore previous images
+        run: |
+          mkdir -p dist
+          if git fetch --depth=1 origin output; then
+            git --work-tree=dist checkout FETCH_HEAD -- .
+            git reset -q
+          fi
+
+      - name: Generate contribution snake
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-snake.svg
+            dist/github-snake-dark.svg?palette=github-dark
+
+      - name: Download github-stats
+        run: |
+          curl -fsSL -o "$RUNNER_TEMP/github-stats" \
+            "https://github.com/jstrieb/github-stats/releases/download/${GITHUB_STATS_VERSION}/github-stats_x86_64-linux"
+          echo "${GITHUB_STATS_SHA256}  $RUNNER_TEMP/github-stats" | sha256sum --check
+          chmod +x "$RUNNER_TEMP/github-stats"
+
+      # Needs a classic PAT (repo, read:user, user:email) in the STATS_TOKEN
+      # secret so it can read private repos and count lines changed in them.
+      - name: Generate stats and lines-of-code cards
+        continue-on-error: true # GitHub's stats APIs are flaky; keep old cards
+        env:
+          ACCESS_TOKEN: ${{ secrets.STATS_TOKEN }}
+          EXCLUDE_REPOS: ${{ github.repository }}
+          EXCLUDE_PRIVATE: "false"
+          SILENT: "true"
+          MAX_RETRIES: "5"
+          OVERVIEW_OUTPUT_FILE: ${{ github.workspace }}/dist/overview.svg
+          LANGUAGES_OUTPUT_FILE: ${{ github.workspace }}/dist/languages.svg
+        run: |
+          if [ -z "$ACCESS_TOKEN" ]; then
+            echo "::warning::STATS_TOKEN secret is not set; skipping the stats cards."
+            exit 0
+          fi
+          # github-stats clones repos into the working directory to count lines.
+          cd "$RUNNER_TEMP"
+          # The stock card title uses the profile's display name; show the
+          # username instead so the card carries no real name.
+          ./github-stats --dump-overview-template overview.template.svg
+          sed -i "s/{{ name }}'s/${GITHUB_REPOSITORY_OWNER}'s/" overview.template.svg
+          grep -q "${GITHUB_REPOSITORY_OWNER}'s" overview.template.svg
+          OVERVIEW_TEMPLATE="$PWD/overview.template.svg" ./github-stats
+
+      - name: Publish to the output branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch --orphan output
+          mv dist/*.svg .
+          git add -- *.svg
+          git commit -q -m "Update generated profile images"
+          git push --force origin output
