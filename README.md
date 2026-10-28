@@ -98,10 +98,4 @@
   </picture>
 </p>
 
-## Joke of the Day
-
-<p align="center">
-  <img src="https://readme-jokes.vercel.app/api?theme=github_dark&borderColor=F97316&qColor=F97316&aColor=58A6FF&hideBorder" alt="Random programming joke" />
-</p>
-
-<p align="center"><sub>Stats by <a href="https://github.com/anuraghazra/github-readme-stats">github-readme-stats</a> · streak by <a href="https://github.com/DenverCoder1/github-readme-streak-stats">DenverCoder1</a> · 3D graph by <a href="https://github.com/yoshi389111/github-profile-3d-contrib">yoshi389111</a> · snake by <a href="https://github.com/Platane/snk">Platane/snk</a> · jokes by <a href="https://github.com/ABSphreak/readme-jokes">readme-jokes</a></sub></p>
+<p align="center"><sub>Stats by <a href="https://github.com/anuraghazra/github-readme-stats">github-readme-stats</a> · streak by <a href="https://github.com/DenverCoder1/github-readme-streak-stats">DenverCoder1</a> · 3D graph by <a href="https://github.com/yoshi389111/github-profile-3d-contrib">yoshi389111</a> · snake by <a href="https://github.com/Platane/snk">Platane/snk</a></sub></p>
